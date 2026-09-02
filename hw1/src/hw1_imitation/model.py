@@ -47,12 +47,33 @@ class MSEPolicy(BasePolicy):
     ) -> None:
         super().__init__(state_dim, action_dim, chunk_size)
 
+        layers = []
+        in_dim = state_dim
+        for h in hidden_dims:
+            layers.append(nn.Linear(in_dim, h))
+            layers.append(nn.ReLU())
+            in_dim = h
+        layers.append(nn.Linear(in_dim, action_dim * chunk_size))
+        self.net = nn.Sequential(*layers)
+
+
+    def forward(self, state: torch.Tensor) -> torch.Tensor:
+        """
+        state: [B, state_dim]
+        returns predicted action chunk: [B, chunk_size, action_dim]
+        """
+        out = self.net(state)
+        return out.view(-1, self.chunk_size, self.action_dim)
+
     def compute_loss(
         self,
         state: torch.Tensor,
         action_chunk: torch.Tensor,
     ) -> torch.Tensor:
-        raise NotImplementedError
+
+        pred = self.forward(state)  # [B, chunk_size, action_dim]
+        loss = nn.functional.mse_loss(pred, action_chunk)
+        return loss
 
     def sample_actions(
         self,
@@ -60,7 +81,8 @@ class MSEPolicy(BasePolicy):
         *,
         num_steps: int = 10,
     ) -> torch.Tensor:
-        raise NotImplementedError
+        # MSE policy is deterministic — num_steps is unused, just returns forward().
+        return self.forward(state)
 
 
 class FlowMatchingPolicy(BasePolicy):
@@ -89,7 +111,7 @@ class FlowMatchingPolicy(BasePolicy):
         *,
         num_steps: int = 10,
     ) -> torch.Tensor:
-        raise NotImplementedError
+        return self.forward(state)
 
 
 PolicyType: TypeAlias = Literal["mse", "flow"]

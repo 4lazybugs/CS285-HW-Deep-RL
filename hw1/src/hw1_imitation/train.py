@@ -1,7 +1,7 @@
 """Train and evaluate a Push-T imitation policy."""
-
 from __future__ import annotations
 
+from hw1_imitation.evaluation import Logger, evaluate_policy
 from dataclasses import asdict, dataclass
 from datetime import datetime
 from pathlib import Path
@@ -110,6 +110,7 @@ def run_training(config: TrainConfig) -> None:
         drop_last=True,
     )
 
+
     model = build_policy(
         config.policy_type,
         state_dim=states.shape[1],
@@ -128,6 +129,43 @@ def run_training(config: TrainConfig) -> None:
     logger = Logger(log_dir)
 
     ### TODO: PUT YOUR MAIN TRAINING LOOP HERE ###
+    optimizer = torch.optim.Adam(
+        model.parameters(), lr=config.lr, weight_decay=config.weight_decay
+    )
+
+    step = 0
+    for epoch in range(config.num_epochs):
+        for state, action_chunk in loader:
+            state = state.float().to(device)
+            action_chunk = action_chunk.float().to(device)
+
+            model.train()
+            loss = model.compute_loss(state, action_chunk)
+
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+
+            if step % config.log_interval == 0:
+                logger.log({"train/loss": loss.item(), "epoch": epoch}, step=step)
+
+            if step % config.eval_interval == 0:
+                evaluate_policy(
+                    model=model,
+                    normalizer=normalizer,
+                    device=device,
+                    chunk_size=config.chunk_size,
+                    video_size=config.video_size,
+                    num_video_episodes=config.num_video_episodes,
+                    flow_num_steps=config.flow_num_steps,
+                    step=step,
+                    logger=logger,
+                )
+
+            step += 1
+
+
+
 
     logger.dump_for_grading()
 
