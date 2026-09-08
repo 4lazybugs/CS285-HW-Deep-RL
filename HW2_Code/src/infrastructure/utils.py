@@ -1,10 +1,10 @@
 from collections import OrderedDict
 import numpy as np
 import copy
-from networks.policies import MLPPolicy
+from HW2_Code.src.networks.policies import MLPPolicy
 import gym
 import cv2
-from infrastructure import pytorch_util as ptu
+from HW2_Code.src.infrastructure import pytorch_util as ptu
 from typing import Dict, Tuple, List
 
 ############################################

@@ -4,7 +4,7 @@ import wandb
 api = wandb.Api()
 
 entity = "lazybugs305-sungkyunkwan-university"
-project = "hw2-PolicyGradient"
+project = "hw1-imitation"
 
 runs = api.runs(f"{entity}/{project}")
 

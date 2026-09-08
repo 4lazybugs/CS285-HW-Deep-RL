@@ -8,7 +8,7 @@ import numpy as np
 import torch
 from torch import distributions
 
-from infrastructure import pytorch_util as ptu
+from HW2_Code.src.infrastructure import pytorch_util as ptu
 
 
 class MLPPolicy(nn.Module):

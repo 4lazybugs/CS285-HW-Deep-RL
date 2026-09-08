@@ -2,9 +2,9 @@ from typing import Optional, Sequence
 import numpy as np
 import torch
 
-from networks.critics import ValueCritic
-from networks.policies import MLPPolicyPG
-from infrastructure import pytorch_util as ptu
+from HW2_Code.src.networks.critics import ValueCritic
+from HW2_Code.src.networks.policies import MLPPolicyPG
+from HW2_Code.src.infrastructure import pytorch_util as ptu
 from torch import nn
 
 

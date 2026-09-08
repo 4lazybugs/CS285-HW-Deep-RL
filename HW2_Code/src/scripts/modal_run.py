@@ -2,7 +2,7 @@ from pathlib import Path
 
 import modal
 
-from scripts.run import main, setup_arguments
+from HW2_Code.src.scripts.run import main, setup_arguments
 
 
 APP_NAME = "hw2-pg"

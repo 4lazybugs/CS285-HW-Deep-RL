@@ -8,10 +8,10 @@ import numpy as np
 import torch
 import tqdm
 
-from agents.pg_agent import PGAgent
-from infrastructure import utils
-from infrastructure import pytorch_util as ptu
-from infrastructure.log_utils import setup_wandb, Logger, dump_log
+from HW2_Code.src.agents.pg_agent import PGAgent
+from HW2_Code.src.infrastructure import utils
+from HW2_Code.src.infrastructure import pytorch_util as ptu
+from HW2_Code.src.infrastructure.log_utils import setup_wandb, Logger, dump_log
 
 MAX_NVIDEO = 2
 
