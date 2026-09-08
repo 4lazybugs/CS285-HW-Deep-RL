@@ -1,0 +1,8 @@
+{"time":"2026-09-05T02:38:47.825536844+09:00","level":"INFO","msg":"main: starting server","port-filename":"/tmp/tmp4z642jkk/port-1088357.txt","pid":1088357,"log-level":0,"disable-analytics":false,"shutdown-on-parent-exit":false,"enable-dcgm-profiling":false}
+{"time":"2026-09-05T02:38:47.825890601+09:00","level":"INFO","msg":"server: will exit if parent process dies","ppid":1088357}
+{"time":"2026-09-05T02:38:47.825838854+09:00","level":"INFO","msg":"server: accepting connections","addr":{"Name":"/tmp/wandb-1088357-1088436-3624522768/socket","Net":"unix"}}
+{"time":"2026-09-05T02:38:48.015364631+09:00","level":"INFO","msg":"connection: ManageConnectionData: new connection created","id":"1(@)"}
+{"time":"2026-09-05T02:38:48.027032666+09:00","level":"INFO","msg":"handleInformInit: received","streamId":"a6gbnrep","id":"1(@)"}
+{"time":"2026-09-05T02:38:48.379679865+09:00","level":"INFO","msg":"handleInformInit: stream started","streamId":"a6gbnrep","id":"1(@)"}
+{"time":"2026-09-05T02:42:07.968154113+09:00","level":"INFO","msg":"handleInformFinish: finish message received","streamId":"a6gbnrep","id":"1(@)"}
+{"time":"2026-09-05T02:42:07.97442067+09:00","level":"INFO","msg":"handleInformFinish: stream closed","streamId":"a6gbnrep","id":"1(@)"}

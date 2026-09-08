@@ -1,2 +1,4 @@
 ssh/*
 ./vscode/*
+load_wandb.py
+run_all_experiments.sh

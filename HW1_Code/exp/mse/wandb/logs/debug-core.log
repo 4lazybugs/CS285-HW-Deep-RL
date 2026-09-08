@@ -1,0 +1,7 @@
+{"time":"2026-09-05T02:39:04.069260219+09:00","level":"INFO","msg":"main: starting server","port-filename":"/tmp/tmp5lmk4xil/port-1089002.txt","pid":1089002,"log-level":0,"disable-analytics":false,"shutdown-on-parent-exit":false,"enable-dcgm-profiling":false}
+{"time":"2026-09-05T02:39:04.069559344+09:00","level":"INFO","msg":"server: will exit if parent process dies","ppid":1089002}
+{"time":"2026-09-05T02:39:04.069556065+09:00","level":"INFO","msg":"server: accepting connections","addr":{"Name":"/tmp/wandb-1089002-1089080-1810328903/socket","Net":"unix"}}
+{"time":"2026-09-05T02:39:04.262674644+09:00","level":"INFO","msg":"connection: ManageConnectionData: new connection created","id":"1(@)"}
+{"time":"2026-09-05T02:39:04.267727973+09:00","level":"INFO","msg":"handleInformInit: received","streamId":"m1zfq6cj","id":"1(@)"}
+{"time":"2026-09-05T02:39:04.612883121+09:00","level":"INFO","msg":"handleInformInit: stream started","streamId":"m1zfq6cj","id":"1(@)"}
+{"time":"2026-09-05T02:42:04.148077768+09:00","level":"INFO","msg":"handleInformFinish: finish message received","streamId":"m1zfq6cj","id":"1(@)"}

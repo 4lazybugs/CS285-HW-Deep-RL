@@ -1,0 +1,71 @@
+_wandb:
+    value:
+        cli_version: 0.23.1
+        e:
+            b9onqgwmr4d9ctywawd4u4hmkkpkbax2:
+                codePath: hw1/src/hw1_imitation/train.py
+                codePathLocal: train.py
+                email: lazybugs305@gmail.com
+                executable: /home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/bin/python3
+                git:
+                    commit: 59e40fc035374fd9b29195a4c3bef02690b515b5
+                    remote: https://github.com/berkeleydeeprlcourse/homework_spring2026.git
+                host: gmkim-desktop
+                os: Linux-6.8.0-90-generic-x86_64-with-glibc2.35
+                program: /home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/src/hw1_imitation/train.py
+                python: CPython 3.11.16
+                root: /home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/src/hw1_imitation
+                startedAt: "2026-09-02T06:38:08.340008Z"
+                writerId: b9onqgwmr4d9ctywawd4u4hmkkpkbax2
+        m: []
+        python_version: 3.11.16
+        t:
+            "1":
+                - 1
+            "2":
+                - 1
+            "3":
+                - 2
+                - 13
+                - 16
+            "4": 3.11.16
+            "5": 0.23.1
+            "12": 0.23.1
+            "13": linux-x86_64
+batch_size:
+    value: 128
+chunk_size:
+    value: 8
+data_dir:
+    value: data
+eval_interval:
+    value: 10000
+exp_name:
+    value: null
+flow_num_steps:
+    value: 10
+hidden_dims:
+    value:
+        - 256
+        - 256
+        - 256
+log_interval:
+    value: 100
+lr:
+    value: 0.0003
+num_epochs:
+    value: 400
+num_video_episodes:
+    value: 5
+policy_type:
+    value: mse
+seed:
+    value: 42
+video_size:
+    value:
+        - 256
+        - 256
+wandb_project:
+    value: hw1-imitation
+weight_decay:
+    value: 0

@@ -1,0 +1,17 @@
+{
+  "os":  "Linux-6.8.0-90-generic-x86_64-with-glibc2.35",
+  "python":  "CPython 3.11.16",
+  "startedAt":  "2026-09-02T06:38:08.340008Z",
+  "program":  "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/src/hw1_imitation/train.py",
+  "codePath":  "hw1/src/hw1_imitation/train.py",
+  "codePathLocal":  "train.py",
+  "git":  {
+    "remote":  "https://github.com/berkeleydeeprlcourse/homework_spring2026.git",
+    "commit":  "59e40fc035374fd9b29195a4c3bef02690b515b5"
+  },
+  "email":  "lazybugs305@gmail.com",
+  "root":  "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/src/hw1_imitation",
+  "host":  "gmkim-desktop",
+  "executable":  "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/bin/python3",
+  "writerId":  "b9onqgwmr4d9ctywawd4u4hmkkpkbax2"
+}

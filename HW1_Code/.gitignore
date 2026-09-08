@@ -3,7 +3,6 @@ __pycache__/
 .git/
 .venv/
 *.egg-info/
-wandb/
 .vscode/
 .idea/
 .DS_Store
@@ -11,7 +10,6 @@ wandb/
 # Data artifacts
 /data/
 checkpoints/
-videos/
 *.zip
 
 

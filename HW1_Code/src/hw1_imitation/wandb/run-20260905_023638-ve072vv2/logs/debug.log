@@ -1,0 +1,101 @@
+2026-09-05 02:36:38,452 INFO    MainThread:1085389 [wandb_setup.py:_flush():80] Current SDK version is 0.23.1
+2026-09-05 02:36:38,452 INFO    MainThread:1085389 [wandb_setup.py:_flush():80] Configure stats pid to 1085389
+2026-09-05 02:36:38,452 INFO    MainThread:1085389 [wandb_setup.py:_flush():80] Loading settings from /home/gmkim/.config/wandb/settings
+2026-09-05 02:36:38,452 INFO    MainThread:1085389 [wandb_setup.py:_flush():80] Loading settings from /home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/src/hw1_imitation/wandb/settings
+2026-09-05 02:36:38,452 INFO    MainThread:1085389 [wandb_setup.py:_flush():80] Loading settings from environment variables
+2026-09-05 02:36:38,453 INFO    MainThread:1085389 [wandb_init.py:setup_run_log_directory():714] Logging user logs to /home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/src/hw1_imitation/wandb/run-20260905_023638-ve072vv2/logs/debug.log
+2026-09-05 02:36:38,453 INFO    MainThread:1085389 [wandb_init.py:setup_run_log_directory():715] Logging internal logs to /home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/src/hw1_imitation/wandb/run-20260905_023638-ve072vv2/logs/debug-internal.log
+2026-09-05 02:36:38,453 INFO    MainThread:1085389 [wandb_init.py:init():841] calling init triggers
+2026-09-05 02:36:38,453 INFO    MainThread:1085389 [wandb_init.py:init():846] wandb.init called with sweep_config: {}
+config: {'data_dir': 'data', 'policy_type': 'mse', 'flow_num_steps': 10, 'chunk_size': 8, 'batch_size': 128, 'lr': 0.0003, 'weight_decay': 0.0, 'hidden_dims': (256, 256, 256), 'num_epochs': 400, 'eval_interval': 10000, 'num_video_episodes': 5, 'video_size': (256, 256), 'log_interval': 100, 'seed': 42, 'wandb_project': 'hw1-imitation', 'exp_name': None, '_wandb': {}}
+2026-09-05 02:36:38,453 INFO    MainThread:1085389 [wandb_init.py:init():889] starting backend
+2026-09-05 02:36:38,687 INFO    MainThread:1085389 [wandb_init.py:init():892] sending inform_init request
+2026-09-05 02:36:38,699 INFO    MainThread:1085389 [wandb_init.py:init():900] backend started and connected
+2026-09-05 02:36:38,701 INFO    MainThread:1085389 [wandb_init.py:init():970] updated telemetry
+2026-09-05 02:36:38,704 INFO    MainThread:1085389 [wandb_init.py:init():994] communicating run to backend with 90.0 second timeout
+2026-09-05 02:36:39,548 INFO    MainThread:1085389 [wandb_init.py:init():1041] starting run threads in backend
+2026-09-05 02:36:39,599 INFO    MainThread:1085389 [wandb_run.py:_console_start():2521] atexit reg
+2026-09-05 02:36:39,599 INFO    MainThread:1085389 [wandb_run.py:_redirect():2369] redirect: wrap_raw
+2026-09-05 02:36:39,599 INFO    MainThread:1085389 [wandb_run.py:_redirect():2438] Wrapping output streams.
+2026-09-05 02:36:39,599 INFO    MainThread:1085389 [wandb_run.py:_redirect():2461] Redirects installed.
+2026-09-05 02:36:39,600 INFO    MainThread:1085389 [wandb_init.py:init():1081] run started, returning control to user process
+2026-09-05 02:38:32,625 INFO    wandb-AsyncioManager-main:1085389 [service_client.py:_forward_responses():80] Reached EOF.
+2026-09-05 02:38:32,625 INFO    wandb-AsyncioManager-main:1085389 [mailbox.py:close():137] Closing mailbox, abandoning 1 handles.
+2026-09-05 02:38:33,675 ERROR   wandb-AsyncioManager-main:1085389 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/wandb/sdk/lib/asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/home/gmkim/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/asyncio/streams.py", line 392, in drain
+    await self._protocol._drain_helper()
+  File "/home/gmkim/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-09-05 02:38:33,690 ERROR   wandb-AsyncioManager-main:1085389 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/wandb/sdk/lib/asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/home/gmkim/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/asyncio/streams.py", line 392, in drain
+    await self._protocol._drain_helper()
+  File "/home/gmkim/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-09-05 02:38:33,691 ERROR   wandb-AsyncioManager-main:1085389 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/wandb/sdk/lib/asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/home/gmkim/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/asyncio/streams.py", line 392, in drain
+    await self._protocol._drain_helper()
+  File "/home/gmkim/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-09-05 02:38:33,711 ERROR   wandb-AsyncioManager-main:1085389 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/wandb/sdk/lib/asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/home/gmkim/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/asyncio/streams.py", line 392, in drain
+    await self._protocol._drain_helper()
+  File "/home/gmkim/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-09-05 02:38:33,715 ERROR   wandb-AsyncioManager-main:1085389 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/wandb/sdk/lib/asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/home/gmkim/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/asyncio/streams.py", line 392, in drain
+    await self._protocol._drain_helper()
+  File "/home/gmkim/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-09-05 02:38:33,717 ERROR   wandb-AsyncioManager-main:1085389 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/wandb/sdk/lib/asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/home/gmkim/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/asyncio/streams.py", line 392, in drain
+    await self._protocol._drain_helper()
+  File "/home/gmkim/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost

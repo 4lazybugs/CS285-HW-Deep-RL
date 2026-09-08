@@ -1,0 +1,32 @@
+/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/pygame/pkgdata.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_stream, resource_exists
+Traceback (most recent call last):
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/src/hw1_imitation/train.py", line 179, in <module>
+    main()
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/src/hw1_imitation/train.py", line 175, in main
+    run_training(config)
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/src/hw1_imitation/train.py", line 153, in run_training
+    evaluate_policy(
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/src/hw1_imitation/evaluation.py", line 193, in evaluate_policy
+    obs, reward, terminated, truncated, info = env.step(
+                                               ^^^^^^^^^
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/gymnasium/wrappers/common.py", line 125, in step
+    observation, reward, terminated, truncated, info = self.env.step(action)
+                                                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/gymnasium/wrappers/common.py", line 393, in step
+    return super().step(action)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/gymnasium/core.py", line 327, in step
+    return self.env.step(action)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/gymnasium/wrappers/common.py", line 285, in step
+    return self.env.step(action)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/gym_pusht/envs/pusht.py", line 250, in step
+    self.agent.velocity += acceleration * self.dt
+    ^^^^^^^^^^^^^^^^^^^
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/pymunk/_typing_attr.py", line 9, in __setattr__
+    super().__setattr__(name, value)
+  File "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/lib/python3.11/site-packages/pymunk/body.py", line 317, in _set_velocity
+    lib.cpBodySetVelocity(self._body, vel)
+KeyboardInterrupt

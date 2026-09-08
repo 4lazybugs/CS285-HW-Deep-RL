@@ -1,0 +1,39 @@
+{
+  "os":  "Linux-6.8.0-90-generic-x86_64-with-glibc2.35",
+  "python":  "CPython 3.11.16",
+  "startedAt":  "2026-09-04T15:21:55.878418Z",
+  "program":  "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/src/hw1_imitation/train.py",
+  "codePath":  "train.py",
+  "codePathLocal":  "train.py",
+  "git":  {
+    "remote":  "git@github.com:4lazybugs/CS285.git"
+  },
+  "email":  "lazybugs305@gmail.com",
+  "root":  "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/src/hw1_imitation",
+  "host":  "gmkim-desktop",
+  "executable":  "/home/gmkim/Desktop/[code]_CS285/homework_spring2026/hw1/.venv/bin/python3",
+  "cpu_count":  24,
+  "cpu_count_logical":  32,
+  "gpu":  "NVIDIA GeForce RTX 4090",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "884582645760",
+      "used":  "731264184320"
+    }
+  },
+  "memory":  {
+    "total":  "134882983936"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce RTX 4090",
+      "memoryTotal":  "25757220864",
+      "cudaCores":  16384,
+      "architecture":  "Ada",
+      "uuid":  "GPU-14b0a91d-5032-beac-9101-66fda0c9561d"
+    }
+  ],
+  "cudaVersion":  "12.4",
+  "writerId":  "wwhg2cvb0rhkdtdbt4dn11tr7y8h1tk7"
+}
