@@ -11,17 +11,17 @@ from typing import Any, Dict, List
 import torch
 from tqdm import trange, tqdm
 
-from hw4.config import TrainConfig
-from hw4.models.load import load_lora_policy_model_and_tokenizer, tokenize_chat_prompts
-from hw4.rl.base import AlgoConfig
-from hw4.rl.grpo import GRPO
-from hw4.rl.reinforce import Reinforce
-from hw4.rollout.hf_sampler import HFSampler, SamplingConfig
-from hw4.rollout.rollout_buffer import RolloutBatch
-from hw4.tasks.base import TaskExample
-from hw4.tasks.format_copy import FormatCopyTask
-from hw4.utils.seed import set_seed
-from hw4.utils.wandb_utils import WandBLogger
+from src.config import TrainConfig
+from src.models.load import load_lora_policy_model_and_tokenizer, tokenize_chat_prompts
+from src.rl.base import AlgoConfig
+from src.rl.grpo import GRPO
+from src.rl.reinforce import Reinforce
+from src.rollout.hf_sampler import HFSampler, SamplingConfig
+from src.rollout.rollout_buffer import RolloutBatch
+from src.tasks.base import TaskExample
+from src.tasks.format_copy import FormatCopyTask
+from src.utils.seed import set_seed
+from src.utils.wandb_utils import WandBLogger
 
 
 def parse_args() -> TrainConfig:
@@ -202,7 +202,16 @@ def compute_group_advantages(rewards: torch.Tensor, group_size: int, eps: float 
     #   of your choice for that group
     #
     # Return a flat tensor with the same shape/order as rewards.
-    raise NotImplementedError("student TODO: compute_group_advantages")
+    if group_size <= 1:
+        return torch.zeros_like(rewards)
+    if rewards.numel() % group_size != 0:
+        raise ValueError("rewards length must be divisible by group_size")
+    groups = rewards.reshape(-1, group_size)
+    means = groups.mean(dim=1, keepdim=True)
+    stds = groups.std(dim=1, keepdim=True, unbiased=False)
+    advantages = (groups - means) / (stds + eps)
+    advantages = torch.where(stds > eps, advantages, torch.zeros_like(advantages))
+    return advantages.reshape_as(rewards)
 
 
 def maybe_normalize_advantages(advantages: torch.Tensor, enabled: bool, eps: float = 1e-6) -> torch.Tensor:
@@ -211,7 +220,13 @@ def maybe_normalize_advantages(advantages: torch.Tensor, enabled: bool, eps: flo
     # Again use the population standard deviation (unbiased=False).
     # Otherwise return A unchanged.
     # Keep the output shape identical to the input shape.
-    raise NotImplementedError("student TODO: maybe_normalize_advantages")
+    if not enabled:
+        return advantages
+    mean = advantages.mean()
+    std = advantages.std(unbiased=False)
+    if float(std.detach()) <= eps:
+        return torch.zeros_like(advantages)
+    return (advantages - mean) / (std + eps)
 
 
 def maybe_update_warmup_lr(optimizer: torch.optim.Optimizer, base_lr: float, step: int, warmup_steps: int) -> None:
@@ -447,7 +462,7 @@ def build_task(cfg: TrainConfig):
     if cfg.task == "format_copy":
         return FormatCopyTask(seed=cfg.seed + 11)
     if cfg.task == "math_hard":
-        from hw4.tasks.math_hard import MathHardTask
+        from src.tasks.math_hard import MathHardTask
 
         return MathHardTask(seed=cfg.seed + 17, train_levels=(5,), eval_subset_size=512)
     raise ValueError(f"Unknown task: {cfg.task}")

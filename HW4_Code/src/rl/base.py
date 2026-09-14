@@ -5,7 +5,7 @@ from typing import Any, Dict, Optional
 
 import torch
 
-from hw4.rollout.rollout_buffer import RolloutBatch
+from src.rollout.rollout_buffer import RolloutBatch
 
 
 @dataclass
