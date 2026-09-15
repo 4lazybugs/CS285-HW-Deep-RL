@@ -7,8 +7,8 @@ from typing import Dict, List
 import torch
 from tqdm import tqdm
 
-from hw4.models.load import load_inference_model_and_tokenizer, resolve_adapter_path, tokenize_chat_prompts
-from hw4.tasks.format_copy import FormatCopyTask
+from src.models.load import load_inference_model_and_tokenizer, resolve_adapter_path, tokenize_chat_prompts
+from src.tasks.format_copy import FormatCopyTask
 
 
 @torch.no_grad()
@@ -122,7 +122,7 @@ def main():
     )
 
     if args.task == "math_hard":
-        from hw4.tasks.math_hard import MathHardTask
+        from src.tasks.math_hard import MathHardTask
 
         task = MathHardTask(seed=0, train_levels=(5,), eval_subset_size=512)
         eval_split = "test_full" if args.math_hard_eval_run_full_test_set else args.math_hard_eval_split

@@ -6,9 +6,9 @@ from typing import Any, Dict, List, Optional
 import torch
 from transformers.generation import GenerationConfig
 
-from hw4.models.load import tokenize_chat_prompts
-from hw4.models.logprobs import build_completion_mask, compute_per_token_logprobs
-from hw4.rollout.sampler_base import RolloutOutput, Sampler
+from src.models.load import tokenize_chat_prompts
+from src.models.logprobs import build_completion_mask, compute_per_token_logprobs
+from src.rollout.sampler_base import RolloutOutput, Sampler
 
 
 @dataclass

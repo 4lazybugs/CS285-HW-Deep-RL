@@ -5,15 +5,15 @@ from typing import Dict
 
 import torch
 
-from hw4.models.logprobs import (
+from src.models.logprobs import (
     approx_kl_from_logprobs,
     compute_per_token_logprobs,
     masked_mean,
     masked_mean_per_row,
 )
-from hw4.rl.base import RLAlgorithm
-from hw4.rollout.rollout_buffer import RolloutBatch, iter_minibatches
-from hw4.utils.torch_utils import clip_grad_norm_
+from src.rl.base import RLAlgorithm
+from src.rollout.rollout_buffer import RolloutBatch, iter_minibatches
+from src.utils.torch_utils import clip_grad_norm_
 
 
 class GRPO(RLAlgorithm):

@@ -7,8 +7,8 @@ from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 from datasets import get_dataset_config_names, load_dataset
 
-from hw4.tasks.base import Task, TaskExample
-from hw4.utils.answer_parsing import (
+from src.tasks.base import Task, TaskExample
+from src.utils.answer_parsing import (
     extract_last_boxed_content,
     extract_last_number,
     extract_number_from_boxed_answer,

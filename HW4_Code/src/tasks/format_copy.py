@@ -3,8 +3,8 @@ from __future__ import annotations
 import random
 from typing import Any, Dict, List, Optional, Tuple
 
-from hw4.tasks.base import Task, TaskExample
-from hw4.utils.answer_parsing import (
+from src.tasks.base import Task, TaskExample
+from src.utils.answer_parsing import (
     extract_number_from_xml_answer,
     extract_xml_answer_content,
     is_strict_xml_answer,
